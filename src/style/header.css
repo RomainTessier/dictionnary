@@ -1,0 +1,21 @@
+header{
+    height: 32px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.darkmode-switch{
+    width: 34px;
+    height: 14px;
+    border-radius: 10px;
+    background-color: #757575;
+    padding: 3px;
+}
+
+.darkmode-switch .circle{
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: white;
+    
+}
