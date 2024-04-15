@@ -23,3 +23,29 @@ header{
 .toggled{
     transform: translateX(calc(34px - 100%));
 }
+
+.font{
+    height: 32px;
+    justify-content: space-between;
+    gap: 5vw;
+    border-right: 1px solid #E9E9E9;
+    padding-right: 5vw;
+}
+
+.fontName{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.font img{
+    height: 8px;
+}
+
+.darkmode{
+    gap: 2.5vw;
+    padding-left: 5vw;
+}
+
+.darkmode img{
+    height: 20px;
+}
