@@ -11,19 +11,22 @@ export default function SearchBar() {
     const [word, setWord] = useState('');
 
     const handleSearch = async () => {
-        
-        try {
-            setWordData(word)
-            let wordData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`);
-            setWord('');
-            let wordJson = await wordData.json();
-            setWordData(wordJson);
-        } catch (error) {
-            console.log(error);
-            setWordData('error');
+
+        if (word === '') {
+            return;
+        } else {
+            try {
+                setWordData(word)
+                let wordData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`);
+                setWord('');
+                let wordJson = await wordData.json();
+                setWordData(wordJson);
+
+            } catch (error) {
+                console.log(error);
+                setWordData('error');
+            }
         }
-        // console.log(wordJson);
-        
     }
 
     return(

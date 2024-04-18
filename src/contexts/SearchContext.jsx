@@ -7,7 +7,7 @@ const SearchContext = createContext();
 // Create a provider component
 const SearchProvider = ({ children }) => {
     const [wordData, setWordData] = useState('');
-    // console.log(wordData);
+
 
     return (
         <SearchContext.Provider value={{wordData, setWordData}}>

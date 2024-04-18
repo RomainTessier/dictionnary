@@ -1,13 +1,14 @@
 import React, {useContext} from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import Loading from './Loading';
+import Word from '../views/Word';
 
 export default function WordDefinition () {
 
     const {wordData} = useContext(SearchContext);
     
     if (typeof wordData === 'string' && wordData !== '') {
-        console.log(typeof wordData);
+        
         return (
             <div>
                 <Loading/>
@@ -15,9 +16,9 @@ export default function WordDefinition () {
         )
     } else if (wordData[0] !== undefined) {
         return (
-            <div>
-                <h1>{wordData[0].word}</h1>
-            </div>
+            <>
+                <Word wordData={wordData}/>
+            </>
         )
     } else if (wordData === '') {
         return (
