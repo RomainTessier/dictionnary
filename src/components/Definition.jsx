@@ -1,15 +1,15 @@
 import '../style/definition.css';
 import link from '../assets/images/icon-new-window.svg';
+import { DarkThemeContext } from '../contexts/DarkThemeContext';
+import { useContext } from 'react';
 
 export default function Definition({wordMeaning, source}) {
-    console.log(wordMeaning);
-
-    console.log(source);
+    const {darkTheme} = useContext(DarkThemeContext);
 
     return (
         <div className="definition">
             <div className="wordType d-flex ai-center">
-                <h3>{ wordMeaning.partOfSpeech }</h3>
+                <h3 style={{color: darkTheme ? 'white' : '#2D2D2D'}}>{ wordMeaning.partOfSpeech }</h3>
                 <div></div>
             </div>
             <div className="meaning">Meaning</div>
@@ -37,7 +37,7 @@ export default function Definition({wordMeaning, source}) {
 
             <div className="source">
                 <div>Source</div>
-                <a href={source} className='d-flex ai-center'>
+                <a href={source} className='d-flex ai-center' style={{color: darkTheme ? 'white' : '#2D2D2D', textDecoration: darkTheme ? 'underline white' : 'underline #757575'}}>
                     {source}
                     <img src={link} alt="link" />
                 </a>
