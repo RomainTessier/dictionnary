@@ -53,3 +53,23 @@ ul li::before {
     font-size: 15px;
     color: #757575;
 }
+
+.source{
+    border-top: #E9E9E9 1px solid;
+}
+
+.source div{
+    padding-top: 20px;
+    font-size: 16px;
+    color: #757575;
+    align-self: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.source a{
+    text-decoration: underline #757575;
+    text-underline-offset: 3px;
+    color: #2D2D2D;
+    gap: 10px;
+    padding: 10px 0 20px 0;
+}

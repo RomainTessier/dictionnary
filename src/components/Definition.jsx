@@ -1,8 +1,10 @@
 import '../style/definition.css';
+import link from '../assets/images/icon-new-window.svg';
 
-export default function Definition({wordMeaning}) {
+export default function Definition({wordMeaning, source}) {
     console.log(wordMeaning);
 
+    console.log(source);
 
     return (
         <div className="definition">
@@ -15,13 +17,13 @@ export default function Definition({wordMeaning}) {
             <ul>
                 {wordMeaning.definitions.map((def, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 {def.definition}
                             </li>
                         )
                     }
                 )}
-                <div className="example" style={{display : wordMeaning.definitions[0].example != undefined ? 'flex' : 'none'}}>
+                <div className="example" style={{display : wordMeaning.definitions[0].example !== undefined ? 'flex' : 'none'}}>
                     "{wordMeaning.definitions[0].example}"
                 </div>
             </ul>
@@ -34,7 +36,11 @@ export default function Definition({wordMeaning}) {
             </div>
 
             <div className="source">
-
+                <div>Source</div>
+                <a href={source} className='d-flex ai-center'>
+                    {source}
+                    <img src={link} alt="link" />
+                </a>
             </div>
         </div>
     )
