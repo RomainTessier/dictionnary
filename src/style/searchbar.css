@@ -11,10 +11,17 @@
     border-radius: 16px;
     width: 80%;
     font-size: 17px;
+    font-weight: bold;
 }
 
 .searchbar input:focus{
     outline: none;
+}
+
+.searchbar input::placeholder{
+    color: #C2C2C2;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .searchbar button{
@@ -27,5 +34,11 @@
 .searchbar button img{
     height: 15px;
     padding: 0 5%;
+}
+
+.error{
+    color:#FF5252;
+    padding-top: 5px;
+    font-size: 14px;
 }
 

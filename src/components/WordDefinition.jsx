@@ -28,7 +28,7 @@ export default function WordDefinition () {
     } else {
         return (
             <div>
-                <h1>Error</h1>
+                <h1>The word you're looking for doesn't exist. Please try again</h1>
             </div>
         )
     }

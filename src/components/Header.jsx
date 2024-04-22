@@ -25,9 +25,9 @@ export default function Header(){
                     />
 
                     <div className={`d-flex ${menu ? 'menuActive menu' : 'menuInactive menu'}`}>
-                        <div onClick={() => setFont('sans-serif')}>Sans-serif</div>
-                        <div onClick={() => setFont('Serif')} >Serif</div>
-                        <div onClick={() => setFont('Monospace')}>Monospace</div>
+                        <div style={{fontFamily : 'sans-serif'}} onClick={() => setFont('Sans-serif')}>Sans serif</div>
+                        <div style={{fontFamily : 'serif'}} onClick={() => setFont('Serif')} >Serif</div>
+                        <div style={{fontFamily : 'Monospace'}} onClick={() => setFont('Monospace')}>Mono</div>
                     </div>
                 </div>
 

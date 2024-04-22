@@ -6,6 +6,12 @@ import { useContext } from 'react';
 export default function Definition({wordMeaning, source}) {
     const {darkTheme} = useContext(DarkThemeContext);
 
+    const handleSynonyms = async () => {
+        let wordData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${synonyms}`);
+        let wordJson = await wordData.json();
+        console.log(wordJson);
+    }
+
     return (
         <div className="definition">
             <div className="wordType d-flex ai-center">
@@ -28,7 +34,10 @@ export default function Definition({wordMeaning, source}) {
                 </div>
             </ul>
 
-            <div className="synonyms" style={{display : wordMeaning.synonyms.length ? 'flex' : 'none'}}>
+            <div className="synonyms" 
+            style={{display : wordMeaning.synonyms.length ? 'flex' : 'none'}}
+            onClick={handleSynonyms}
+            >
                     <div>Synonyms</div>
                     <p>
                         {wordMeaning.synonyms.join(', ')}
@@ -37,8 +46,8 @@ export default function Definition({wordMeaning, source}) {
 
             <div className="source">
                 <div>Source</div>
-                <a href={source} className='d-flex ai-center' style={{color: darkTheme ? 'white' : '#2D2D2D', textDecoration: darkTheme ? 'underline white' : 'underline #757575'}}>
-                    {source}
+                <a href={source[source.length-1]} className='d-flex ai-center' style={{color: darkTheme ? 'white' : '#2D2D2D', textDecoration: darkTheme ? 'underline white' : 'underline #757575'}}>
+                    {source[source.length-1]}
                     <img src={link} alt="link" />
                 </a>
             </div>

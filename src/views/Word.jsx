@@ -3,7 +3,7 @@ import play from '../assets/images/icon-play.svg'
 import Definition from '../components/Definition';
 
 export default function Word({wordData}) {
-    console.log(wordData[0].sourceUrls);
+    console.log(wordData[0].phonetics[0]);
 
     const handlePlay = () => {
         let audio = new Audio(wordData[0].phonetics[0].audio);
