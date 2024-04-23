@@ -2,14 +2,17 @@ import '../style/definition.css';
 import link from '../assets/images/icon-new-window.svg';
 import { DarkThemeContext } from '../contexts/DarkThemeContext';
 import { useContext } from 'react';
+import { SearchContext } from '../contexts/SearchContext';
 
 export default function Definition({wordMeaning, source}) {
     const {darkTheme} = useContext(DarkThemeContext);
+    const {setWordData} = useContext(SearchContext);
 
-    const handleSynonyms = async () => {
+    const handleSynonyms = async (synonyms) => {
         let wordData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${synonyms}`);
         let wordJson = await wordData.json();
-        console.log(wordJson);
+        setWordData(wordJson);
+        console.log(wordJson[0]);
     }
 
     return (
@@ -36,11 +39,16 @@ export default function Definition({wordMeaning, source}) {
 
             <div className="synonyms" 
             style={{display : wordMeaning.synonyms.length ? 'flex' : 'none'}}
-            onClick={handleSynonyms}
+            // onClick={handleSynonyms}
             >
                     <div>Synonyms</div>
                     <p>
-                        {wordMeaning.synonyms.join(', ')}
+                        {wordMeaning.synonyms.map((syn, index) => {
+                            return (
+                                <span key={index} onClick={() => handleSynonyms(syn)}>{syn}, </span>
+                            )
+                            }
+                        )}
                     </p>
             </div>
 
