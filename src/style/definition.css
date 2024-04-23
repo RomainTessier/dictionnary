@@ -49,6 +49,10 @@ ul li::before {
     line-height: 24px;
 }
 
+.synonyms p span{
+    cursor: pointer;
+}
+
 .example{
     font-size: 15px;
     color: #757575;
@@ -72,4 +76,34 @@ ul li::before {
     color: #2D2D2D;
     gap: 10px;
     padding: 10px 0 20px 0;
+}
+
+@media (min-width: 768px){
+    .wordType h3{
+        font-size: 24px;
+    }
+    .meaning{
+        font-size: 18px;
+    }
+    ul li{
+        font-size: 16px;
+    }
+    .synonyms{
+        
+        padding: 2vh 0 2vh 0;
+    }
+
+    .synonyms div, .synonyms p{
+        font-size: 18px;
+    }
+    .source{
+        display: flex;
+        align-items: center;
+    }
+    .source a{
+        padding: 20px 0 0 20px;
+    }
+    .example{
+        font-size: 16px;
+    }
 }

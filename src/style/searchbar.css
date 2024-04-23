@@ -29,6 +29,8 @@
     background-color: #F4F4F4;
     height: 15px;
     width: 20%;
+    display: flex;
+    justify-content: end;
 }
 
 .searchbar button img{
@@ -42,3 +44,13 @@
     font-size: 14px;
 }
 
+@media (min-width: 768px){
+    .searchbar{
+        margin-top: 2.5vh;
+        height: 64px;
+    }
+
+    .searchbar input{
+        font-size: 20px;
+    }
+}

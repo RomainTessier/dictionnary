@@ -14,3 +14,9 @@ body{
 .d-flex{
     display: flex;
 }
+
+@media (min-width: 1024px){
+    body{
+        padding: 2.5vw 25vw;
+    }
+}

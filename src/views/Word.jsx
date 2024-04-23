@@ -7,8 +7,13 @@ export default function Word({wordData}) {
     const [playHovered, setPlayHovered] = useState(false);
 
     const handlePlay = () => {
-        let audio = new Audio(wordData[0].phonetics[0].audio);
-        audio.play();
+        if(wordData[0].phonetics[0].audio === undefined || wordData[0].phonetics[0].audio === '') {
+            setPlayHovered(false);
+            return;
+        } else {
+            let audio = new Audio(wordData[0].phonetics[0].audio);
+            audio.play();
+        }
     }
 
     return (
@@ -23,10 +28,10 @@ export default function Word({wordData}) {
                     }
                     </h2>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75" onClick={() => handlePlay()} onMouseEnter={setPlayHovered(true)} onMouseLeave={setPlayHovered(false)}>
-                    <g fill={playHovered ? 'white' : '#A445ED'} fillRule="evenodd" >
-                        <circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
-                        <path d="M29 27v21l21-10.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75" onClick={() => handlePlay()} >
+                    <g onMouseEnter={() => setPlayHovered(true)} onMouseLeave={() => setPlayHovered(false)} fill='#A445ED' fillRule="evenodd" >
+                        <circle cx="37.5" cy="37.5" r="37.5" opacity={playHovered ? '1' : '.25'}/>
+                        <path d="M29 27v21l21-10.5z" fill={playHovered ? 'white' : '#A445ED'}/>
                     </g>
                 </svg>
             </div>

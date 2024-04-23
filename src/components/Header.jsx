@@ -24,11 +24,14 @@ export default function Header(){
                     style={{transform : menu ? 'rotate(180deg)' : 'rotate(0deg)'}}
                     />
 
-                    <div className={`d-flex ${menu ? 'menuActive menu' : 'menuInactive menu'}`}>
+                    <div className={`d-flex ${menu ? 'menuActive menu' : 'menuInactive menu'}`} 
+                    style={{backgroundColor : darkTheme ? '#1E1E1E' : '#fff', boxShadow : darkTheme ? '0px 0px 10px 0px #A445ED' : '0px 0px 10px 0px rgba(0,0,0,0.1)'}}
+                    >
                         <div style={{fontFamily : 'sans-serif'}} onClick={() => setFont('Sans-serif')}>Sans serif</div>
                         <div style={{fontFamily : 'serif'}} onClick={() => setFont('Serif')} >Serif</div>
                         <div style={{fontFamily : 'Monospace'}} onClick={() => setFont('Monospace')}>Mono</div>
                     </div>
+                    <div className="leftMenu" style={{display: menu ? 'block' : 'none'}} ></div>
                 </div>
 
                 <div className="darkmode d-flex ai-center">

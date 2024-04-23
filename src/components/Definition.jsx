@@ -54,7 +54,7 @@ export default function Definition({wordMeaning, source}) {
 
             <div className="source">
                 <div>Source</div>
-                <a href={source[source.length-1]} className='d-flex ai-center' style={{color: darkTheme ? 'white' : '#2D2D2D', textDecoration: darkTheme ? 'underline white' : 'underline #757575'}}>
+                <a href={source[source.length-1]} className='d-flex' style={{color: darkTheme ? 'white' : '#2D2D2D', textDecoration: darkTheme ? 'underline white' : 'underline #757575'}}>
                     {source[source.length-1]}
                     <img src={link} alt="link" />
                 </a>
